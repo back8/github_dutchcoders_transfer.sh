@@ -364,7 +364,7 @@ func (s *Server) postHandler(w http.ResponseWriter, r *http.Request) {
 
 				if status != clamavScanStatusOK {
 					s.logger.Printf("prescan failed: %s",status)
-					http.Error(w, errors.New("Could clamav prescan found a virus").Error(), http.StatusPreconditionFailed)
+					http.Error(w, errors.New("Clamav prescan found a virus").Error(), http.StatusPreconditionFailed)
 					return
 				}
 			}
@@ -533,7 +533,7 @@ func (s *Server) putHandler(w http.ResponseWriter, r *http.Request) {
 
 		if status != clamavScanStatusOK {
 			s.logger.Printf("prescan failed: %s",status)
-			http.Error(w, errors.New("Could clamav prescan found a virus").Error(), http.StatusPreconditionFailed)
+			http.Error(w, errors.New("Clamav prescan found a virus").Error(), http.StatusPreconditionFailed)
 			return
 		}
 
